@@ -1,18 +1,24 @@
 import './App.css';
 import { Link, Route } from 'wouter';
-import ListOfGifs from './components/ListOfGifs';
-import Home from './pages/Home';
+import Home from './pages/Home'
+import Detail from './components/Detail';
+import SearchResults from './pages/SearchResults';
 
 function App() {
   return (
     <div className="App">
       <section className="App-content">
+        <Link to='/'>
+          <p className="Logo">Giffy</p>
+        </Link>
         <Route path='/' component={Home}></Route>
-        <Link to='/'></Link>
-        <Link to='/gif/argentina'>Gifs de Argentina</Link>
-        <Link to='/gif/colombia'>Gifs de Colombia</Link>
-        <Link to='/gif/chile'>Gifs de Chile</Link>
-        <Route path="/gif/:keyword" component={ListOfGifs} />
+        <Route
+          component={SearchResults}
+          path="/search/:keyword" />
+        <Route
+          component={Detail}
+          path="/gif/:id"
+        />
       </section>
     </div>
   );
