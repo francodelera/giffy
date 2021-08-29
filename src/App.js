@@ -11,7 +11,10 @@ function App() {
         <Link to='/'>
           <p className="Logo">Giffy</p>
         </Link>
-        <Route path='/' component={Home}></Route>
+        <Route
+          component={Home}
+          path='/'
+        />
         <Route
           component={SearchResults}
           path="/search/:keyword" />
