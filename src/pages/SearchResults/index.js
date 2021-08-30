@@ -7,10 +7,14 @@ export default function SearchResults({ params }) {
     const { keyword } = params
     const { loading, gifs } = useGifs({ keyword });
 
-    return <>
-        {loading
-            ? <Spinner />
-            : <ListOfGifs gifs={gifs} />
-        }
-    </>
+
+    if (loading) return <Spinner />
+    if (gifs.length !== 0) {
+        return <>
+            <h3 className="App-title">Search for: '{keyword}'</h3>
+            <ListOfGifs gifs={gifs} />
+        </>
+    } else {
+        return <p>No results for: '{keyword}'</p>
+    }
 }

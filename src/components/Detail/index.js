@@ -6,5 +6,10 @@ export default function Detail({ params }) {
 
     const gif = gifs.find(singleGif => singleGif.id === params.id);
 
-    return <Gif title={gif.title} id={gif.id} url={gif.url} /> // or <Gif { ...gifs }/>
+    return <>
+        <h3 className="App-title">{gif.title}</h3>
+        <Gif {...gif} />
+    </>
 }
+
+// or simply: return <Gif title={gif.title} id={gif.id} url={gif.url} />
