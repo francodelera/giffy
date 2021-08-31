@@ -1,7 +1,7 @@
 import React from 'react'
-import Spinner from '../../components/Spinner'
-import ListOfGifs from '../../components/ListOfGifs/ListOfGifs'
-import useGifs from '../../hooks/useGifs'
+import Spinner from 'components/Spinner'
+import ListOfGifs from 'components/ListOfGifs/ListOfGifs'
+import useGifs from 'hooks/useGifs'
 
 export default function SearchResults({ params }) {
     const { keyword } = params
@@ -11,10 +11,10 @@ export default function SearchResults({ params }) {
     if (loading) return <Spinner />
     if (gifs.length !== 0) {
         return <>
-            <h3 className="App-title">Search for: '{keyword}'</h3>
+            <h3 className="App-title">Resultados para: '{keyword.replace(/%20/g, " ")}'</h3>
             <ListOfGifs gifs={gifs} />
         </>
     } else {
-        return <p>No results for: '{keyword}'</p>
+        return <p>No hay resultados para: '{keyword}'</p>
     }
 }

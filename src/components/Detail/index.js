@@ -1,4 +1,4 @@
-import useGlobalGifs from '../../hooks/useGlobalGifs';
+import useGlobalGifs from 'hooks/useGlobalGifs';
 import Gif from '../Gif';
 
 export default function Detail({ params }) {
