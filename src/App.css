@@ -2,15 +2,28 @@
   text-align: center;
 }
 
+.App-Logo {
+  font-size: 2em;
+  align-items: center;
+  border: 6px solid;
+  padding: 20px 10px;
+  color: white;
+  font-family: JetBrains Mono, monospace;
+  font-weight: 500;
+  box-shadow: 1px 1px 2px black, 0 0 25px darkslategray, 0 0 5px gray;
+  text-shadow: 1px 1px 2px black, 0 0 25px darkslategray, 0 0 5px gray;
+  cursor: pointer;
+  margin: auto;
+}
+
 .App-content {
   background-color: #282c34;
+  color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
   padding: 16px;
 }
 
@@ -30,6 +43,7 @@ a {
 
 .App-results {
   flex-shrink: 2;
+  width: 100%;
 }
 
 .App-category {
@@ -48,17 +62,4 @@ a {
     top: 0;
     width: 40%;
   }
-}
-
-.Logo {
-  font-size: 50px;
-  align-items: center;
-  border: 6px solid;
-  padding: 20px 10px;
-  color: white;
-  font-family: JetBrains Mono, monospace;
-  font-weight: 500;
-  box-shadow: 1px 1px 2px black, 0 0 25px darkslategray, 0 0 5px gray;
-  text-shadow: 1px 1px 2px black, 0 0 25px darkslategray, 0 0 5px gray;
-  cursor: pointer;
 }

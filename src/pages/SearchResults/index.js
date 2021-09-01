@@ -12,8 +12,7 @@ export default function SearchResults({ params }) {
         setPage(prevPage => prevPage + 1);
     }
 
-
-    if (loading || loadingNextPage) return <Spinner />
+    if (loading) return <Spinner />
     if (gifs.length !== 0) {
         return <>
             <h3 className="App-title">Resultados para: '{keyword.replace(/%20/g, " ")}'</h3>
