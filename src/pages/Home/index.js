@@ -36,7 +36,7 @@ export default function Home() {
             </form>
             <div className="App-main">
                 <div className="App-results">
-                    <h3 className="App-title">Última búsqueda: "{lastSearch.replace(/%20/g, " ")}"</h3>
+                    <h3 className="App-title">Última búsqueda: "{decodeURI(lastSearch)}"</h3>
                     <ListOfGifs gifs={gifs} />
                 </div>
                 <div className="App-category">

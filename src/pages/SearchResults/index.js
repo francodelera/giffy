@@ -17,7 +17,7 @@ export default function SearchResults({ params }) {
 
     const debounceHandleNextPage = useCallback(debounce(
         () => setPage(prevPage => prevPage + 1), 1000
-    ), []);
+    ), [setPage]);
 
     useEffect(() => {
         if (isNearScreen) {
@@ -28,11 +28,10 @@ export default function SearchResults({ params }) {
     if (loading) return <Spinner />
     if (gifs.length !== 0) {
         return <>
-            <h3 className="App-title">Resultados para: '{keyword.replace(/%20/g, " ")}'</h3>
+            <h3 className="App-title">Resultados para: '{decodeURI(keyword)}'</h3>
             <ListOfGifs gifs={gifs} />
             <div id="visor" ref={externalRef}></div>
             <br />
-            {/* <button className="NextPageButton" onClick={handleNextPage}>Get next page</button> */}
         </>
     } else {
         return <p>No hay resultados para: '{keyword}'</p>
