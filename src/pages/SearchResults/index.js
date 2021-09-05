@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef } from 'react'
 import Spinner from 'components/Spinner'
-import ListOfGifs from 'components/ListOfGifs/ListOfGifs'
+import ListOfGifs from 'components/ListOfGifs'
 import useGifs from 'hooks/useGifs'
 import './styles.css';
 import useNearScreen from 'hooks/useNearScreen';

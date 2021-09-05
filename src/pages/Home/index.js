@@ -1,39 +1,26 @@
-import React, { useState } from "react";
+import React, { useCallback } from "react";
 import { useLocation } from "wouter";
-import ListOfGifs from "components/ListOfGifs/ListOfGifs";
+import ListOfGifs from "components/ListOfGifs";
 import useGifs from "hooks/useGifs";
 import TrendingSearches from "components/TrendingSearches";
+import SearchForm from "components/SearchForm";
 
 
 export default function Home() {
-
     const lastSearch = localStorage.getItem('lastKeyword');
 
-    const [keyword, setKeyword] = useState('');
     // eslint-disable-next-line no-unused-vars
     const [actualPath, navigateTo] = useLocation();
-
-    const handleSubmit = event => {
-        event.preventDefault();
-        if (keyword !== '') navigateTo(`/search/${keyword}`);
-    }
-
-    const handleChange = event => {
-        setKeyword(event.target.value);
-    }
-
     const { loading, gifs } = useGifs();
+
+    const handleSubmit = useCallback(({ keyword }) => {
+        if (keyword !== '') navigateTo(`/search/${keyword}`);
+    }, [navigateTo]);
+
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <input
-                    placeholder='Search gifs'
-                    type='text'
-                    value={keyword}
-                    onChange={handleChange} />
-                <button>🔎</button>
-            </form>
+            <SearchForm onSubmit={handleSubmit} />
             <div className="App-main">
                 <div className="App-results">
                     <h3 className="App-title">Última búsqueda: "{decodeURI(lastSearch)}"</h3>
