@@ -1,6 +1,6 @@
 import './App.css';
 import { Link, Route } from 'wouter';
-import Detail from './components/Detail';
+import Detail from './pages/Detail';
 import SearchResults from './pages/SearchResults';
 import StaticContext from './context/StaticContext';
 import { GifsContextProvider } from './context/GifsContext';

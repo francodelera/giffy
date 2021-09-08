@@ -13,7 +13,7 @@ export default function useGifs({ keyword } = { keyword: null }) {
     // recuperamos la keyword del localStorage
     const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'random';
 
-    useEffect(function () {
+    useEffect(() => {
         setLoading(true);
         getGifs({ keyword: keywordToUse })
             .then(gifs => {

@@ -1,10 +1,10 @@
-import useGlobalGifs from 'hooks/useGlobalGifs';
-import Gif from '../Gif';
+import useSingleGif from 'hooks/useSingleGif';
+import Gif from '../../components/Gif';
 
 export default function Detail({ params }) {
-    const gifs = useGlobalGifs();
+    const { gif } = useSingleGif({ id: params.id });
 
-    const gif = gifs.find(singleGif => singleGif.id === params.id);
+    if (!gif) return null;
 
     return <>
         <h3 className="App-title">{gif.title}</h3>
