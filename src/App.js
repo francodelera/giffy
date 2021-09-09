@@ -3,7 +3,7 @@ import { Link, Route } from 'wouter';
 import Detail from './pages/Detail';
 import SearchResults from './pages/SearchResults';
 import StaticContext from './context/StaticContext';
-import { GifsContextProvider } from 'context/GifsContext';
+import GifsContextProvider from './context/GifsContext';
 import React, { Suspense } from 'react';
 
 const HomePage = React.lazy(() => import('./pages/Home'));
