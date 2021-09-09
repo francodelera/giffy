@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { useLocation } from "wouter";
 
 function SearchForm({ onSubmit }) {
     const [keyword, setKeyword] = useState('');
+    // eslint-disable-next-line no-unused-vars
+    const [actualPath, navigateTo] = useLocation();
 
     const handleSubmit = event => {
         event.preventDefault();
-        if (keyword !== '') onSubmit({ keyword })
+        if (keyword !== '') navigateTo(`/search/${keyword}`);
     }
 
     const handleChange = event => {
