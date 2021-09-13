@@ -36,7 +36,7 @@ export default function SearchResults({ params }) {
                 <meta name="description" content={title}></meta>
             </Helmet>
             <header>
-                <SearchForm />
+                <SearchForm initialKeyword={keyword} initialRating={rating} />
             </header>
             <h3 className="App-title">Resultados para: '{decodeURI(keyword)}'</h3>
             <ListOfGifs gifs={gifs} />
