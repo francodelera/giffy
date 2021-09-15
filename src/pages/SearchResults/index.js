@@ -9,14 +9,14 @@ import { Helmet } from 'react-helmet';
 import SearchForm from 'components/SearchForm';
 
 export default function SearchResults({ params }) {
-    const { keyword, rating = 'g' } = params
-    const { loading, gifs, setPage } = useGifs({ keyword, rating });
+    const { keyword, language = 'en', rating = 'g' } = params
+    const { loading, gifs, setPage } = useGifs({ keyword, language, rating });
     const externalRef = useRef();
     const { isNearScreen } = useNearScreen({
         externalRef: loading ? null : externalRef,
         once: false
     });
-    const title = gifs ? `${gifs.length} resutados para "${decodeURI(keyword)}"` : '';
+    const title = gifs ? `${gifs.length} resultados para "${decodeURI(keyword)}"` : '';
 
     const debounceHandleNextPage = useCallback(debounce(
         () => setPage(prevPage => prevPage + 1), 1000
@@ -36,7 +36,7 @@ export default function SearchResults({ params }) {
                 <meta name="description" content={title}></meta>
             </Helmet>
             <header>
-                <SearchForm initialKeyword={keyword} initialRating={rating} />
+                <SearchForm initialKeyword={keyword} initialRating={rating} initialLanguage={language} />
             </header>
             <h3 className="App-title">Resultados para: '{decodeURI(keyword)}'</h3>
             <ListOfGifs gifs={gifs} />

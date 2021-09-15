@@ -27,7 +27,7 @@ function App() {
               />
               <Route
                 component={SearchResults}
-                path="/search/:keyword/:rating?" />
+                path="/search/:keyword/:rating?/:language?" />
               <Route
                 component={Detail}
                 path="/gif/:id"
