@@ -5,6 +5,7 @@ import SearchResults from 'pages/SearchResults';
 import StaticContext from 'context/StaticContext';
 import { GifsContextProvider } from 'context/GifsContext';
 import React, { Suspense } from 'react';
+import ErrorPage from 'pages/404';
 
 const HomePage = React.lazy(() => import('./pages/Home'));
 
@@ -33,7 +34,7 @@ function App() {
                 path="/gif/:id"
               />
               <Route
-                component={() => <h1>404 ERROR: Not found</h1>}
+                component={ErrorPage}
                 path="/404"
               />
             </GifsContextProvider>
