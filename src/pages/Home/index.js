@@ -20,7 +20,7 @@ export default function Home() {
             </header>
             <div className="App-main">
                 <div className="App-results">
-                    <h3 className="App-title">Última búsqueda: "{decodeURI(lastSearch)}"</h3>
+                    <h3 className="App-title">Last search: "{decodeURI(lastSearch)}"</h3>
                     <ListOfGifs gifs={gifs} />
                 </div>
                 <div className="App-category">

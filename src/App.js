@@ -33,7 +33,7 @@ function App() {
                 path="/gif/:id"
               />
               <Route
-                component={() => <h1>404 ERROR u_u</h1>}
+                component={() => <h1>404 ERROR: Not found</h1>}
                 path="/404"
               />
             </GifsContextProvider>

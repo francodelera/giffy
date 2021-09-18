@@ -3,6 +3,6 @@ import App from './App';
 
 test('renders without crashing', async () => {
   render(<App />);
-  const title = await screen.findByText(/Última búsqueda/i);
+  const title = await screen.findByText(/Last Search/i);
   expect(title).toBeInTheDocument();
 });

@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef } from 'react'
 import Spinner from 'components/Spinner'
 import ListOfGifs from 'components/ListOfGifs'
 import useGifs from 'hooks/useGifs'
-import './styles.css';
 import useNearScreen from 'hooks/useNearScreen';
 import debounce from 'just-debounce-it';
 import { Helmet } from 'react-helmet';
@@ -16,7 +15,7 @@ export default function SearchResults({ params }) {
         externalRef: loading ? null : externalRef,
         once: false
     });
-    const title = gifs ? `${gifs.length} resultados para "${decodeURI(keyword)}"` : '';
+    const title = gifs ? `${gifs.length} results for "${decodeURI(keyword)}"` : '';
 
     const debounceHandleNextPage = useCallback(debounce(
         () => setPage(prevPage => prevPage + 1), 1000
@@ -38,12 +37,12 @@ export default function SearchResults({ params }) {
             <header>
                 <SearchForm initialKeyword={keyword} initialRating={rating} initialLanguage={language} />
             </header>
-            <h3 className="App-title">Resultados para: '{decodeURI(keyword)}'</h3>
+            <h3 className="App-title">Results for: '{decodeURI(keyword)}'</h3>
             <ListOfGifs gifs={gifs} />
             <div id="visor" ref={externalRef}></div>
             <br />
         </>
     } else {
-        return <p>No hay resultados para: '{keyword}'</p>
+        return <p>No results for: '{keyword}'</p>
     }
 }
