@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from "wouter";
 import useForm from "./hook";
+import './styles.css';
 
 const RATINGS = ['g', 'pg', 'pg-13', 'r'];
 
@@ -37,7 +38,7 @@ function SearchForm({ initialKeyword = '', initialLanguage = LANGUAGES[0], initi
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="SearchForm" onSubmit={handleSubmit}>
             <input
                 placeholder='Search gifs'
                 type='text'
