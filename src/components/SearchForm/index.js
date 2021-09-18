@@ -14,7 +14,6 @@ function SearchForm({ initialKeyword = '', initialLanguage = LANGUAGES[0], initi
         keyword,
         language,
         rating,
-        times,
         updateKeyword,
         updateLanguage,
         updateRating
@@ -53,7 +52,6 @@ function SearchForm({ initialKeyword = '', initialLanguage = LANGUAGES[0], initi
                 <option disabled>Language</option>
                 {LANGUAGES.map(language => <option key={language}>{language}</option>)}
             </select>
-            <small>{times}</small>
         </form>
     )
 

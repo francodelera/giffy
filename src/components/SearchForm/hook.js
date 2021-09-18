@@ -12,7 +12,6 @@ const REDUCER = (state, action) => {
             return {
                 ...state,
                 keyword: action.payload,
-                times: state.times + 1,
             }
         case ACTIONS.UPDATE_RATING:
             return {
@@ -34,16 +33,14 @@ export default function useForm({ initialKeyword, initialLanguage, initialRating
         keyword: decodeURIComponent(initialKeyword),
         language: initialLanguage,
         rating: initialRating,
-        times: 0,
     });
 
-    const { keyword, language, rating, times } = state;
+    const { keyword, language, rating } = state;
 
     return {
         keyword,
         language,
         rating,
-        times,
         updateKeyword: keyword => dispatch({ type: ACTIONS.UPDATE_KEYWORD, payload: keyword }),
         updateLanguage: language => dispatch({ type: ACTIONS.UPDATE_LANGUAGE, payload: language }),
         updateRating: rating => dispatch({ type: ACTIONS.UPDATE_RATING, payload: rating }),
