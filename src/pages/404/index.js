@@ -1,31 +1,27 @@
 import Gif from "components/Gif";
 import Spinner from "components/Spinner";
-import useGifs from "hooks/useGifs";
-import { useEffect, useState } from "react";
+import useRandomGif from "hooks/useRandomGif";
+import { Helmet } from "react-helmet";
 
 export default function ErrorPage() {
-    const { loading, gifs } = useGifs({ keyword: 'error 404' });
-    const [gif, setGif] = useState();
-
-    const randomElement = gifs[Math.floor(Math.random() * gifs.length)];
-
-    useEffect(() => {
-        setGif(randomElement);
-    }, [randomElement])
+    const { loading, gif } = useRandomGif({ keyword: '404 error' });
 
     if (loading) return <Spinner />
     else {
         return (
             <>
-                <h1>Error 404</h1>
+                <Helmet>
+                    <title>404 Error || Giffy </title>
+                </Helmet>
+                <h1>Oops! 404 Error</h1>
                 {
-                    randomElement !== undefined ?
+                    gif !== undefined ?
                         <Gif
                             url={gif.url}
                             title={gif.title}
                             id={gif.id}
                         />
-                        : <h1>Waiting</h1>
+                        : <h1>Loading gif...</h1>
                 }
             </>
         )
