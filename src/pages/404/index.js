@@ -4,7 +4,7 @@ import useRandomGif from "hooks/useRandomGif";
 import { Helmet } from "react-helmet";
 
 export default function ErrorPage() {
-    const { loading, gif } = useRandomGif({ keyword: '404 error' });
+    const { loading, gif } = useRandomGif({ keyword: '404 error', limit: 500 });
 
     if (loading) return <Spinner />
     else {
