@@ -1,0 +1,12 @@
+.gf-header {
+  display: flex;
+  justify-content: flex-end;
+  height: 40px;
+}
+
+.gf-header button {
+  width: 70px;
+  height: 40px;
+  font-size: 1rem;
+  font-family: inherit;
+}

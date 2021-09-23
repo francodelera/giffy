@@ -1,11 +1,17 @@
-import './App.css';
+import React, { Suspense } from 'react';
 import { Link, Route } from 'wouter';
+
+import Header from 'components/Header';
+
 import Detail from 'pages/Detail';
+import ErrorPage from 'pages/404';
 import SearchResults from 'pages/SearchResults';
+
 import StaticContext from 'context/StaticContext';
 import { GifsContextProvider } from 'context/GifsContext';
-import React, { Suspense } from 'react';
-import ErrorPage from 'pages/404';
+
+import './App.css';
+
 
 const HomePage = React.lazy(() => import('./pages/Home'));
 
@@ -18,6 +24,7 @@ function App() {
       <div className="App">
         <Suspense fallback={null}>
           <section className="App-content">
+            <Header />
             <Link to='/'>
               <div className="App-Logo">Giffy</div>
             </Link>
