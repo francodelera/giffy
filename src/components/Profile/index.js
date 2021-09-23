@@ -11,8 +11,7 @@ export default function Profile() {
         isAuthenticated && (
             <div className="gf-profile">
                 <img src={user.picture} alt={user.name}></img>
-                <p>{user.name}</p>
-                <p>{user.email}</p>
+                <span>{user.name} {user.email}</span>
             </div>
         )
     )

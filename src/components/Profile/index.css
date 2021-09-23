@@ -1,5 +1,19 @@
 .gf-profile {
-  font-size: 1rem;
-  width: 50px;
-  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.gf-profile img {
+  float: left;
+  width: 40px;
+  border-radius: 6px;
+}
+
+.gf-profile span {
+  font-size: 13px;
+  width: 188px;
+  text-align: -webkit-left;
+  margin-left: 10px;
+  float: left;
 }
