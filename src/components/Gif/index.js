@@ -7,7 +7,7 @@ function Gif({ title, id, url }) {
     return (
         <div className="Gif">
             <div className="Gif-buttons">
-                <CopyToClipboard id={id} url={url} />
+                <CopyToClipboard url={url} />
             </div>
             <Link href={`/gif/${id}`} className='Gif-link'>
                 <h4>{title}</h4>

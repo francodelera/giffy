@@ -1,7 +1,4 @@
-.NextPageButton {
-  font-size: 1.5rem;
-  font-family: inherit;
-  border: 3px double white;
-  margin: auto;
-  box-shadow: black;
+.App-title {
+  text-align: left;
+  font-size: 1.4rem;
 }

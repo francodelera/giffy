@@ -6,6 +6,7 @@ import useNearScreen from 'hooks/useNearScreen';
 import debounce from 'just-debounce-it';
 import { Helmet } from 'react-helmet';
 import SearchForm from 'components/SearchForm';
+import './styles.css';
 
 export default function SearchResults({ params }) {
     const { keyword, language = 'en', rating = 'g' } = params
