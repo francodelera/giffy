@@ -1,0 +1,26 @@
+.gf-Copy {
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gf-Copy:hover {
+  background-color: #8c55a2;
+}
+
+.gf-Copy:hover .tooltip-text {
+  display: block;
+  position: absolute;
+  left: -180px;
+  top: -8px;
+  color: white;
+  background: #8c55a2;
+  margin: 10px 0 20px -4px;
+  padding: 5px;
+  font-family: "JetBrainsMono-Regular";
+  border-radius: 6px;
+}
+
+.tooltip-text {
+  display: none;
+}

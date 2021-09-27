@@ -1,9 +1,0 @@
-.gf-Fav {
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.gf-Fav:hover {
-  background-color: rgb(255, 122, 122);
-}

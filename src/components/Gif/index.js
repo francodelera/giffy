@@ -1,13 +1,13 @@
 import "./Gif.css";
 import { Link } from "wouter";
 import React from 'react';
-import Fav from "components/Fav";
+import CopyToClipboard from "components/CopyToClipboard";
 
 function Gif({ title, id, url }) {
     return (
         <div className="Gif">
             <div className="Gif-buttons">
-                <Fav id={id}></Fav>
+                <CopyToClipboard id={id} url={url} />
             </div>
             <Link href={`/gif/${id}`} className='Gif-link'>
                 <h4>{title}</h4>
