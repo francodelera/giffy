@@ -1,15 +1,17 @@
-import useGifs from "./useGifs";
 import { useState, useEffect } from "react";
+import getGifs from "services/getGifs";
 
 export default function useRandomGif({ keyword, limit }) {
-    const { loading, gifs } = useGifs({ keyword, limit });
     const [gif, setGif] = useState();
 
-    const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
-
     useEffect(() => {
-        setGif(randomGif);
-    }, [randomGif])
+        getGifs({ keyword, limit })
+            .then(gifs => {
+                let randomGif = {};
+                if (gifs.length !== 0) randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+                setGif(randomGif);
+            })
+    }, [keyword, limit]);
 
-    return { loading, gif }
+    return { gif }
 }

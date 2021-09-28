@@ -11,5 +11,5 @@ export default function TrendingSearches() {
                 setTrends(results));
     }, []);
 
-    return <Category name='Trendings' options={trends} />;
+    return <Category name='🔺Trendings' options={trends} />;
 }

@@ -7,6 +7,8 @@ import debounce from 'just-debounce-it';
 import { Helmet } from 'react-helmet';
 import SearchForm from 'components/SearchForm';
 import './styles.css';
+import useRandomGif from 'hooks/useRandomGif';
+import Gif from 'components/Gif';
 
 export default function SearchResults({ params }) {
     const { keyword, language = 'en', rating = 'g' } = params
@@ -17,6 +19,7 @@ export default function SearchResults({ params }) {
         once: false
     });
     const title = gifs ? `${gifs.length} results for "${decodeURI(keyword)}"` : '';
+    const { gif } = useRandomGif({ keyword: 'No Results', limit: 500 });
 
     const debounceHandleNextPage = useCallback(debounce(
         () => setPage(prevPage => prevPage + 1), 1000
@@ -38,12 +41,26 @@ export default function SearchResults({ params }) {
             <header>
                 <SearchForm initialKeyword={keyword} initialRating={rating} initialLanguage={language} />
             </header>
-            <h3 className="App-title">Results for: '{decodeURI(keyword)}'</h3>
+            <h3 className="App-title">🔎 Results for: '{decodeURI(keyword)}'</h3>
             <ListOfGifs gifs={gifs} />
             <div id="visor" ref={externalRef}></div>
             <br />
         </>
     } else {
-        return <p>No results for: '{keyword}'</p>
+        return <>
+            <header>
+                <SearchForm initialKeyword={keyword} initialRating={rating} initialLanguage={language} />
+            </header>
+            <p>❌ No results for: '{keyword}'</p>
+            {
+                gif !== undefined ?
+                    <Gif
+                        url={gif.url}
+                        title={gif.title}
+                        id={gif.id}
+                    />
+                    : <Spinner />
+            }
+        </>
     }
 }

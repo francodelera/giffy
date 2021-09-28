@@ -24,7 +24,7 @@ export default function CopyToClipboard({ url }) {
         <>
             <button className='gf-Copy' onClick={handleClick}>
                 <span aria-label='Copy to clipboard' role='img'>📄</span>
-                <div ref={tooltipRef} class="tooltip-text">Copy to clipboard</div>
+                <div ref={tooltipRef} className="tooltip-text">Copy to clipboard</div>
             </button>
             {showModal && <Modal onClose={handleClose}><LoginPage /></Modal>}
         </>
