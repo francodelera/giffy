@@ -8,6 +8,7 @@ import useRandomGif from "hooks/useRandomGif";
 import { Helmet } from "react-helmet";
 import { css, jsx } from '@emotion/react';
 import React from "react";
+import Button from "components/Button";
 
 const containerStyles = css`
     display: flex;
@@ -55,9 +56,10 @@ export default function ErrorPage() {
                                 title={gif.title}
                                 id={gif.id}
                             />
-                            : <h1>Loading gif...</h1>
+                            : <Spinner />
                     }
                 </div>
+                <Button href='/'>Take me home</Button>
             </React.Fragment>
         )
     }
