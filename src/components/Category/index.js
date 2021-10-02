@@ -1,22 +1,25 @@
 import React from 'react'
-import { Link } from 'wouter'
 
-import './Category.css'
+import {
+    CategoryTitle,
+    CategoryList,
+    CategoryListItem,
+    CategoryLink
+} from './styles';
 
 export default function Category({ name, options = [], ...props }) {
-    return <div className={props.className}>
-        <h3 className="Category-title">{name}</h3>
-        <ul className="Category-list">
-            {options.map((singleOption) => (
-                <li className="Category-list-item" key={singleOption}>
-                    <Link
-                        className="Category-link"
+    return <section>
+        <CategoryTitle>{name}</CategoryTitle>
+        <CategoryList>
+            {options.map((singleOption, index) => (
+                <CategoryListItem key={singleOption} index={index}>
+                    <CategoryLink index={index}
                         to={`/search/${singleOption}`}
                     >
                         {singleOption}
-                    </Link>
-                </li>
+                    </CategoryLink>
+                </CategoryListItem>
             ))}
-        </ul>
-    </div>
+        </CategoryList>
+    </section>
 }

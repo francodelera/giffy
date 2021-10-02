@@ -2,3 +2,9 @@
   text-align: left;
   font-size: 1.4rem;
 }
+
+.App-title span {
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 200;
+}

@@ -1,3 +1,8 @@
+:root {
+  --brand-color-1: #8c55a2;
+  --brand-color-2: #a414de;
+}
+
 @font-face {
   font-family: "JetBrainsMono-Regular";
   src: local("JetBrainsMono-Regular"),

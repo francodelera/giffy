@@ -1,6 +1,12 @@
 import { Link as LinkWouter } from "wouter";
 import styled from "@emotion/styled";
 
+const SIZES = {
+    small: '1rem',
+    medium: '2rem',
+    large: '3rem'
+}
+
 export const Link = styled(LinkWouter)`
     align-self: center;
     background-color: #EFEFEF;
@@ -9,11 +15,11 @@ export const Link = styled(LinkWouter)`
     color: black;
     cursor: pointer;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: ${props => SIZES[props.size]};
     padding: 10px;
 
     &:hover {
-        background-color: #8c55a2;
+        background-color: var(--brand-color-1);
         border: 2px solid #7c1ca3;
     }
 `

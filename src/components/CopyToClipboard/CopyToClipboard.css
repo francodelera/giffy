@@ -5,7 +5,7 @@
 }
 
 .gf-Copy:hover {
-  background-color: #8c55a2;
+  background-color: var(--brand-color-1);
 }
 
 .gf-Copy:hover .tooltip-text {
@@ -14,7 +14,7 @@
   left: -180px;
   top: -8px;
   color: white;
-  background: #8c55a2;
+  background: var(--brand-color-1);
   margin: 10px 0 20px -4px;
   padding: 5px;
   font-family: "JetBrainsMono-Regular";

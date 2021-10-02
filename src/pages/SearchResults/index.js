@@ -41,7 +41,7 @@ export default function SearchResults({ params }) {
             <header>
                 <SearchForm initialKeyword={keyword} initialRating={rating} initialLanguage={language} />
             </header>
-            <h3 className="App-title">🔎 Results for: '{decodeURI(keyword)}'</h3>
+            <h3 className="App-title">🔎 Results for: <span>'{decodeURI(keyword)}'</span></h3>
             <ListOfGifs gifs={gifs} />
             <div id="visor" ref={externalRef}></div>
             <br />
