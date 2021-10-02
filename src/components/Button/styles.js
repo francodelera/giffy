@@ -7,6 +7,15 @@ const SIZES = {
     large: '3rem'
 }
 
+const getFontSize = props => {
+    const size = SIZES[props.size]
+    if (!size) {
+        console.warn(`[Button Styled Component] this size is not correct. Use ${Object.keys(SIZES).join(', ')}`)
+        return SIZES.small;
+    }
+    return size;
+}
+
 export const Link = styled(LinkWouter)`
     align-self: center;
     background-color: #EFEFEF;
@@ -15,7 +24,7 @@ export const Link = styled(LinkWouter)`
     color: black;
     cursor: pointer;
     font-family: inherit;
-    font-size: ${props => SIZES[props.size]};
+    font-size: ${getFontSize};
     padding: 10px;
 
     &:hover {

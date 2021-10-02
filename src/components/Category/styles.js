@@ -33,7 +33,7 @@ export const CategoryListItem = styled.li`
     border-radius: 6px;
 
     ${props => {
-        const color = props.index % 2 === 0 ? 'var(--brand-color-1)' : 'var(--brand-color-2)'
+        const color = props.index % 2 === 0 ? props.theme.colors.primary : props.theme.colors.secondary
         return `border: 1px solid ${color}`
     }}
 `
@@ -44,7 +44,7 @@ export const CategoryLink = styled(Link)`
     transition: color ease-in 0.1s;
 
     ${props => {
-        const color = props.index % 2 !== 0 ? 'var(--brand-color-1)' : 'var(--brand-color-2)'
+        const color = props.index % 2 !== 0 ? props.theme.colors.primary : props.theme.colors.secondary
         return `
         :hover {
             color: ${color}
